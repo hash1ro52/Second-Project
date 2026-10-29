@@ -18,7 +18,7 @@
       </a>
       <nav aria-label="Main navigation">
         <a href="#registration" aria-current="page">Create account</a>
-        <a href="#about">About</a>
+        <a href="#community-rules">Community rules</a>
       </nav>
     </div>
   </header>
@@ -28,14 +28,11 @@
       <p class="eyebrow">Join the community</p>
       <h1 id="page-title">Create your account</h1>
       <p>Compare drinks, save your preferences and share your own reviews.</p>
-      <p class="demo-note">Course demo: please use made-up details. No real account will be created.</p>
+      <p class="demo-note">Demo form. Please use sample details.</p>
     </section>
 
     <div class="form-card" id="registration">
       <p class="required-note">Fields marked <span aria-hidden="true">*</span> are required. Everything else is optional.</p>
-
-      <!-- Personal fields have no name: this static demo must not put them in the URL.
-           The radio group needs a name so that only one option can be selected. -->
       <form action="complete.html" method="get">
         <fieldset class="form-section">
           <legend><span class="section-number" aria-hidden="true">1</span> Account details</legend>
@@ -77,7 +74,6 @@
 
             <div class="field">
               <label for="birth-date">Date of birth <span aria-hidden="true">*</span></label>
-              <!-- The 18+ cut-off is fixed to the project date. Update it before reusing this demo. -->
               <input type="date" id="birth-date" autocomplete="bday" min="1900-01-01" max="2008-10-29"
                      required aria-describedby="birth-hint">
               <p class="hint" id="birth-hint">This community is for members aged 18 or over.</p>
@@ -179,7 +175,7 @@
             <p class="error-message rules-error" id="rules-error">Please agree to the community rules to continue.</p>
           </div>
           <button type="submit" class="submit-button">Create account</button>
-          <p class="hint submit-hint">The next page confirms the form check. This demo does not save accounts.</p>
+          <p class="hint submit-hint">This is a demo; no account is saved.</p>
         </div>
       </form>
     </div>
@@ -188,15 +184,10 @@
       <section class="information-card" id="community-rules" aria-labelledby="rules-title" tabindex="-1">
         <h2 id="rules-title">Community rules</h2>
         <p>Be respectful, write honest reviews and do not share other people's personal information. Membership is for people aged 18 or over.</p>
-        <p>This is a student demo. It does not store your account details, password or selected picture.</p>
+        <p>This form does not store account details, passwords or pictures.</p>
         <a href="#rules">Back to the agreement</a>
       </section>
 
-      <section class="information-card" id="about" aria-labelledby="about-title" tabindex="-1">
-        <h2 id="about-title">About the project</h2>
-        <p>Alcohol Ranking Collection is a place to compare drinks by taste, price and product information. Member profiles would let people contribute reviews and keep their preferences.</p>
-        <p>This page demonstrates the account creation form for our WEB1 second project.</p>
-      </section>
     </div>
   </main>
 
