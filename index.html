@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Create a community profile for Alcohol Ranking Collection.">
+  <title>Create an account | Alcohol Ranking Collection</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="header-content">
+      <a class="brand" href="index.html" aria-label="Alcohol Ranking Collection home">
+        <span class="brand-mark" aria-hidden="true">AR</span>
+        <span>Alcohol Ranking<span class="brand-subtitle">Collection</span></span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="#registration" aria-current="page">Create account</a>
+        <a href="#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="page" tabindex="-1">
+    <section class="introduction" aria-labelledby="page-title">
+      <p class="eyebrow">Join the community</p>
+      <h1 id="page-title">Create your account</h1>
+      <p>Compare drinks, save your preferences and share your own reviews.</p>
+      <p class="demo-note">Course demo: please use made-up details. No real account will be created.</p>
+    </section>
+
+    <div class="form-card" id="registration">
+      <p class="required-note">Fields marked <span aria-hidden="true">*</span> are required. Everything else is optional.</p>
+
+      <!-- Personal fields have no name: this static demo must not put them in the URL.
+           The radio group needs a name so that only one option can be selected. -->
+      <form action="complete.html" method="get">
+        <fieldset class="form-section">
+          <legend><span class="section-number" aria-hidden="true">1</span> Account details</legend>
+          <div class="form-grid">
+            <div class="field">
+              <label for="username">Username <span aria-hidden="true">*</span></label>
+              <input type="text" id="username" autocomplete="username" minlength="3" maxlength="20"
+                     pattern="[A-Za-z0-9_]{3,20}" required aria-describedby="username-hint">
+              <p class="hint" id="username-hint">3-20 characters. Use letters, numbers or underscores.</p>
+              <p class="error-message" id="username-error">Enter 3-20 letters, numbers or underscores.</p>
+            </div>
+
+            <div class="field">
+              <label for="email">Email address <span aria-hidden="true">*</span></label>
+              <input type="email" id="email" autocomplete="email" maxlength="100"
+                     required aria-describedby="email-hint">
+              <p class="hint" id="email-hint">For example: alex@example.com</p>
+              <p class="error-message" id="email-error">Enter an email address, such as alex@example.com.</p>
+            </div>
+
+            <div class="field full-width">
+              <label for="password">Password <span aria-hidden="true">*</span></label>
+              <input type="password" id="password" autocomplete="new-password" minlength="8" maxlength="64"
+                     pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,64}" required
+                     aria-describedby="password-hint">
+              <p class="hint" id="password-hint">8-64 characters, including an uppercase letter, a lowercase letter and a number.</p>
+              <p class="error-message" id="password-error">Use at least 8 characters with an uppercase letter, a lowercase letter and a number.</p>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="form-section">
+          <legend><span class="section-number" aria-hidden="true">2</span> Your profile</legend>
+          <div class="form-grid">
+            <div class="field">
+              <label for="full-name">Full name <span class="optional">(optional)</span></label>
+              <input type="text" id="full-name" autocomplete="name" maxlength="60">
+            </div>
+
+            <div class="field">
+              <label for="birth-date">Date of birth <span aria-hidden="true">*</span></label>
+              <!-- The 18+ cut-off is fixed to the project date. Update it before reusing this demo. -->
+              <input type="date" id="birth-date" autocomplete="bday" min="1900-01-01" max="2008-10-29"
+                     required aria-describedby="birth-hint">
+              <p class="hint" id="birth-hint">This community is for members aged 18 or over.</p>
+              <p class="error-message" id="birth-error">Enter a date from 1 January 1900 to 29 October 2008.</p>
+            </div>
+
+            <div class="field">
+              <label for="country">Country <span aria-hidden="true">*</span></label>
+              <select id="country" autocomplete="country-name" required>
+                <option value="">Choose your country</option>
+                <option value="denmark">Denmark</option>
+                <option value="ukraine">Ukraine</option>
+                <option value="germany">Germany</option>
+                <option value="sweden">Sweden</option>
+                <option value="norway">Norway</option>
+                <option value="other">Other</option>
+              </select>
+              <p class="error-message" id="country-error">Choose a country from the list.</p>
+            </div>
+
+            <div class="field">
+              <label for="phone">Phone number <span class="optional">(optional)</span></label>
+              <input type="tel" id="phone" autocomplete="tel" maxlength="25" aria-describedby="phone-hint">
+              <p class="hint" id="phone-hint">Include a country code, for example +45 12 34 56 78.</p>
+            </div>
+
+            <div class="field full-width">
+              <label for="bio">About you <span class="optional">(optional)</span></label>
+              <textarea id="bio" rows="3" maxlength="280" aria-describedby="bio-hint"></textarea>
+              <p class="hint" id="bio-hint">Tell other members what you like to review. Maximum 280 characters.</p>
+            </div>
+
+            <div class="field full-width">
+              <label for="picture">Profile picture <span class="optional">(optional)</span></label>
+              <input type="file" id="picture" accept="image/jpeg,image/png" aria-describedby="picture-hint">
+              <p class="hint" id="picture-hint">Choose a JPG or PNG. In this demo, the file stays on your device.</p>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="form-section preferences">
+          <legend><span class="section-number" aria-hidden="true">3</span> Your preferences</legend>
+
+          <fieldset class="choice-group">
+            <legend>Which categories interest you? <span class="optional">(optional)</span></legend>
+            <p class="hint">You can choose more than one.</p>
+            <div class="choices">
+              <label class="choice"><input type="checkbox" id="beer" value="beer"> Beer</label>
+              <label class="choice"><input type="checkbox" id="wine" value="wine"> Wine</label>
+              <label class="choice"><input type="checkbox" id="whiskey" value="whiskey"> Whiskey</label>
+              <label class="choice"><input type="checkbox" id="liquor" value="liquor"> Liquor</label>
+              <label class="choice"><input type="checkbox" id="rtd" value="rtd"> RTDs</label>
+            </div>
+          </fieldset>
+
+          <fieldset class="choice-group">
+            <legend>How will you use the site? <span aria-hidden="true">*</span></legend>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="site-use" value="browse" required> Browse ratings</label>
+              <label class="choice"><input type="radio" name="site-use" value="reviews"> Write reviews</label>
+              <label class="choice"><input type="radio" name="site-use" value="both"> Both</label>
+            </div>
+          </fieldset>
+
+          <div class="form-grid">
+            <div class="field">
+              <label for="budget">Budget per bottle (DKK) <span class="optional">(optional)</span></label>
+              <input type="number" id="budget" inputmode="numeric" min="10" max="5000" step="10"
+                     aria-describedby="budget-hint">
+              <p class="hint" id="budget-hint">10-5,000 DKK, in steps of 10.</p>
+              <p class="error-message" id="budget-error">Enter 10-5,000 DKK, in steps of 10, or leave this empty.</p>
+            </div>
+
+            <div class="field">
+              <label for="priority">What matters most? <span class="optional">(optional)</span></label>
+              <select id="priority">
+                <option value="">Choose a preference</option>
+                <option value="taste">Taste</option>
+                <option value="price">Price</option>
+                <option value="additives">Fewer additives</option>
+                <option value="information">Clear product information</option>
+              </select>
+            </div>
+
+            <div class="field full-width">
+              <label for="sweetness">Sweetness preference <span class="optional">(optional)</span></label>
+              <input type="range" id="sweetness" min="1" max="5" step="1" value="3" aria-describedby="sweetness-hint">
+              <div class="range-labels" aria-hidden="true"><span>Dry</span><span>Balanced</span><span>Sweet</span></div>
+              <p class="hint" id="sweetness-hint">Five levels, from 1 (dry) to 5 (sweet). The starting value is 3.</p>
+            </div>
+          </div>
+        </fieldset>
+
+        <div class="form-end">
+          <label class="choice agreement"><input type="checkbox" id="updates"> Email me about new reviews and site updates. <span class="optional">(optional)</span></label>
+          <div class="field agreement-field">
+            <input type="checkbox" id="rules" required>
+            <label for="rules">I agree to the <a href="#community-rules">community rules</a>. <span aria-hidden="true">*</span></label>
+            <p class="error-message rules-error" id="rules-error">Please agree to the community rules to continue.</p>
+          </div>
+          <button type="submit" class="submit-button">Create account</button>
+          <p class="hint submit-hint">The next page confirms the form check. This demo does not save accounts.</p>
+        </div>
+      </form>
+    </div>
+
+    <div class="information-grid">
+      <section class="information-card" id="community-rules" aria-labelledby="rules-title" tabindex="-1">
+        <h2 id="rules-title">Community rules</h2>
+        <p>Be respectful, write honest reviews and do not share other people's personal information. Membership is for people aged 18 or over.</p>
+        <p>This is a student demo. It does not store your account details, password or selected picture.</p>
+        <a href="#rules">Back to the agreement</a>
+      </section>
+
+      <section class="information-card" id="about" aria-labelledby="about-title" tabindex="-1">
+        <h2 id="about-title">About the project</h2>
+        <p>Alcohol Ranking Collection is a place to compare drinks by taste, price and product information. Member profiles would let people contribute reviews and keep their preferences.</p>
+        <p>This page demonstrates the account creation form for our WEB1 second project.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>Alcohol Ranking Collection <span aria-hidden="true">&middot;</span> WEB1 Second Project, 2026</p>
+  </footer>
+</body>
+</html>
