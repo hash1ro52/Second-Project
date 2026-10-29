@@ -236,19 +236,56 @@ select:user-invalid {
   display: block;
 }
 
-input[type="file"] {
-  padding: 7px;
+.file-control {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 14px;
+  min-height: 58px;
+  padding: 6px;
+  border: 1px solid #8a8284;
+  border-radius: 4px;
 }
 
-input[type="file"]::file-selector-button {
-  margin-right: 10px;
-  padding: 7px 12px;
+.file-control .file-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  min-height: 0;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.file-button {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  margin: 0;
+  padding: 8px 14px;
   border: 1px solid #8a8284;
-  border-radius: 3px;
+  border-radius: 4px;
   background: #f4f1ee;
   color: #2c2526;
-  font: inherit;
+  font-weight: normal;
   cursor: pointer;
+}
+
+.file-button:hover {
+  background: #e9e1dc;
+}
+
+.file-input:focus-visible + .file-button {
+  outline: 3px solid #6c2737;
+  outline-offset: 3px;
+}
+
+.file-types {
+  color: #62595b;
+  font-size: 14px;
 }
 
 .choice-group {
